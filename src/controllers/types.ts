@@ -1,4 +1,6 @@
 import { Example, LegacyWordDocument, Word, WordDocument } from '../types';
+import WordClassEnum from '../shared/constants/WordClassEnum';
+import { SearchRegExp } from '../shared/utils/createRegExp';
 
 type ResponseData = {
   contentLength: number;

@@ -8,11 +8,11 @@ import { getCachedWords, setCachedWords } from '../../APIs/RedisAPI';
 import { handleWordFlags } from '../../APIs/FlagsAPI';
 import Version from '../../shared/constants/Version';
 import { SearchRegExp } from '../../shared/utils/createRegExp';
-import WordClassEnum from '../../shared/constants/WordClassEnum';
+import { Keyword } from './types';
 
 type IgboSearch = {
   redisClient: RedisClientType | undefined;
-  keywords: { text: string; wordClass: WordClassEnum[]; regex: Pick<SearchRegExp, 'wordReg'> | SearchRegExp }[];
+  keywords: Keyword[];
   strict: boolean;
   isUsingMainKey: boolean | undefined;
   version: Version;

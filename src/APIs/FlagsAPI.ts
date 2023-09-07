@@ -2,9 +2,10 @@ import compact from 'lodash/compact';
 import assign from 'lodash/assign';
 import omit from 'lodash/omit';
 import { LegacyWordDocument, Word, WordDocument } from '../types';
+import { WordType } from '../types/word';
 
 type HandleFlags = {
-  data: { words: (Word | WordDocument | LegacyWordDocument)[]; contentLength: number };
+  data: { words: WordType[]; contentLength: number };
   flags: { examples: boolean; dialects: boolean; resolve: boolean };
 };
 

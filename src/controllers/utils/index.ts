@@ -13,7 +13,7 @@ import WordClass from '../../shared/constants/WordClass';
 import { getAllCachedVerbsAndSuffixes, setAllCachedVerbsAndSuffixes } from '../../APIs/RedisAPI';
 import convertToSkipAndLimit from './convertToSkipAndLimit';
 import parseRange from './parseRange';
-import { WordData } from './types';
+import { Keyword, WordData } from './types';
 import { WithPronunciation } from '../types';
 
 const createSimpleRegExp = (keywords: { text: string }[]) => ({
@@ -256,7 +256,7 @@ export const handleQueries = async ({
     id,
     version,
     searchWord,
-    keywords,
+    keywords: keywords as Keyword[],
     regex,
     page,
     skip,
